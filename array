@@ -1,0 +1,33 @@
+package lab.pkg8;
+import java.util.Arrays;
+import java.util.Scanner;
+public class Lab8 {
+public static void main(String[] args) {
+Scanner in=new Scanner(System.in);
+int m,n;
+System.out.println("Enter the Size of 1st Array:");
+m=in.nextInt(); //storing size of first array
+System.out.println("Enter the Size of 2nd Array:");
+n=in.nextInt(); //storing size of second array
+int firstArray[] =new int[m]; //Initializing first array
+int secondArray[] =new int[n]; //Initializing second array
+System.out.println("Enter the Values for 1st Array:");
+for(int i=0;i<m;i++)
+{
+firstArray[i]=in.nextInt(); //storing elements to first array
+}
+System.out.println("Enter the Values for 2nd Array:");
+for(int i=0;i<n;i++)
+{
+secondArray[i]=in.nextInt(); //storing elements to second array
+}
+int fal = firstArray.length; //determines length of firstArray
+int sal = secondArray.length; //determines length of secondArray
+int[] result = new int[fal + sal]; //resultant array of size first array and second array
+System.arraycopy(firstArray, 0, result, 0, fal);
+//storing values from 1st array to result array
+System.arraycopy(secondArray, 0, result, fal, sal);
+//storing values from 2nd array to result array
+System.out.println(Arrays.toString(result)); //prints the resultant array
+}
+}
