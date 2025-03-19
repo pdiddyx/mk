@@ -1,0 +1,28 @@
+package lab.pkg15;
+import java.util.Scanner;
+public class Lab15 {
+public static void main(String[] args) {
+Scanner in=new Scanner(System.in);
+Complex c1=new Complex();
+Complex c2=new Complex();
+System.out.println("ENTER THE FIRST COMPLEX NUMBER:");
+c1.real=in.nextInt();
+c1.image=in.nextInt();
+System.out.println("ENTER THE FIRST COMPLEX NUMBER:");
+c2.real=in.nextInt();
+c2.image=in.nextInt();
+c1.add(c1,c2);
+}
+}
+class Complex
+{
+int real;
+int image;
+void add(Complex c1,Complex c2)
+{
+Complex c3=new Complex();
+c3.real=c1.real+c2.real;
+c3.image=c1.image+c2.image;
+System.out.println("SUM:"+c3.real+" + i"+c3.image);
+}
+}

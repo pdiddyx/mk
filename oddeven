@@ -1,0 +1,33 @@
+package lab.pkg19;
+public class Lab19 {
+public static void main(String[] args) {
+Even ob2=new Even();
+Thread obj2=new Thread(ob2);
+obj2.start();
+Odd ob1=new Odd();
+Thread obj1=new Thread(ob1);
+obj1.start();
+}
+}
+class Odd implements Runnable
+{
+int i,n=10;
+public void run()
+{
+for(i=1;i<n;i=i+2)
+{
+System.out.println("ODD:"+i);
+}
+}
+}
+class Even implements Runnable
+{
+int i,n=10;
+public void run()
+{
+for(i=0;i<n;i=i+2)
+{
+System.out.println("EVEN:"+i);
+}
+}
+}

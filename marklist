@@ -1,0 +1,43 @@
+<html>
+<head> <title>Marksheet of Students</title>
+</head>
+<body>
+<h3><center>Marksheet of Students</center></h3>
+<form method="POST" action="marksheet.php">
+<label>Input a Register no </label><input type="text" name="txtreg"/><br><br><br>
+<input type="submit" value="show">
+</form> </body> </html>
+
+
+
+<?php
+if($_POST){
+$rg=$_POST['txtreg'];
+$host = "localhost";
+$username = "root";
+$pass = "";
+$con = mysqli_connect($host, $username, $pass, "student");
+if($con)
+echo "Database Connection Established Successfully... <br>";
+$qry="select * from student where rollno='$rg'";
+$result=mysqli_query($con,$qry);
+$nos=mysqli_num_rows($result);
+while($row=mysqli_fetch_row($result))
+{
+echo "<br>\n";
+echo "Rollno: $row[0] <br> Name: $row[1] <br> Mark: $row[2] <br> Grade: $row[3]";
+}
+}
+?>
+
+
+Create database student;
+Use student;
+Create table student(rollno varchar(10),name varchar(10),totalmark varchar(10),grade varchar(10));
+Insert into student (rollno,name,totalmark,grade) values ("1","Arjun","100","A+");
+Insert into student (rollno,name,totalmark,grade) values ("2","Anju","80","B");
+Insert into student (rollno,name,totalmark,grade) values ("3","Amal","70","C");
+Insert into student (rollno,name,totalmark,grade) values ("4","Anakha","75","C");
+Insert into student (rollno,name,totalmark,grade) values ("5","basil","80","B");
+Insert into student (rollno,name,totalmark,grade) values ("6","John","90","A");
+Insert into student (rollno,name,totalmark,grade) values ("7","Vimal","100","A+");
