@@ -1,0 +1,4 @@
+Create database log;
+Use log;
+Create table users(username varchar(10),password varchar(10));
+Insert into users (username,password) values ("yims1","123");
