@@ -1,0 +1,82 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity" >
+<TextView
+android:id="@+id/textView1"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_alignParentBottom="true"
+android:layout_centerHorizontal="true"
+android:layout_marginBottom="71dp"
+android:text="Output:" />
+<EditText
+android:id="@+id/editText1"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:layout_alignParentTop="true"
+android:layout_centerHorizontal="true"
+android:layout_marginTop="43dp"
+android:ems="10"
+android:hint="Enter the Number"
+android:inputType="number" >
+<requestFocus />
+</EditText>
+<Button
+android:id="@+id/button1"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:layout_alignParentLeft="true"
+android:layout_below="@+id/editText1"
+android:layout_marginTop="14dp"
+android:text="Check" />
+</RelativeLayout>
+
+
+
+package com.example.pgm1;
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+public class MainActivity extends Activity {
+EditText numberInput;
+Button checkButton;
+TextView resultText;
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+numberInput = (EditText) findViewById(R.id.editText1);
+checkButton = (Button) findViewById(R.id.button1);
+resultText = (TextView) findViewById(R.id.textView1);
+checkButton.setOnClickListener(new View.OnClickListener() {
+" is not a prime number.";
+@Override
+public void onClick(View arg0) {
+String input = numberInput.getText().toString();
+if (input!="") {
+int number = Integer.parseInt(input);
+boolean isPrime = isPrimeNumber(number);
+String resultMessage = isPrime ? number + " is a prime number." : number +
+resultText.setText(resultMessage);
+} else {
+resultText.setText("Please enter a number.");
+}
+}
+private boolean isPrimeNumber(int number) {
+if (number <= 1) {
+return false;
+}
+for (int i = 2; i <= Math.sqrt(number); i++) {
+if (number % i == 0) {
+return false;
+}
+}
+});
+}
+}
+return true;

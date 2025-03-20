@@ -1,0 +1,12 @@
+echo “Enter the limit:”
+read lim
+a=0
+b=1
+echo “the fibonacci series is :”
+for (( i=0; i=lim; i++))
+do
+echo -n $a
+c=$(( $a+$b ))
+a=$b
+b=$c
+done

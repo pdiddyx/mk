@@ -1,0 +1,32 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity" >
+<TextView
+android:id="@+id/textView1"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_centerHorizontal="true"
+android:layout_centerVertical="true"
+android:text="TextView" />
+</RelativeLayout>
+
+
+
+package com.example.pgm5;
+import android.os.Bundle;
+import android.app.Activity;
+import android.widget.TextView;
+public class MainActivity extends Activity {
+TextView test;
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+test=(TextView) findViewById(R.id.textView1);
+// Set the message to be displayed
+String message = "Hello, this is a simple user interface!";
+test.setText(message);
+}
+}

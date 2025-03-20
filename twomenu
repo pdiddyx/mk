@@ -1,0 +1,52 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+<item
+android:id="@+id/item1"
+android:orderInCategory="100"
+android:showAsAction="never"
+android:title="Open"/>
+<item
+android:id="@+id/item2"
+android:orderInCategory="100"
+android:showAsAction="never"
+android:title="Save"/>
+</menu>
+
+
+
+package com.example.pgm6;
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
+public class MainActivity extends Activity {
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+}
+@Override
+public boolean onCreateOptionsMenu(Menu menu) {
+// Inflate the menu; this adds items to the action bar if it is present.
+getMenuInflater().inflate(R.menu.activity_main, menu);
+return true;
+}
+@Override
+public boolean onOptionsItemSelected( MenuItem item) {
+switch (item.getItemId()) {
+case R.id.item1:
+// Implement logic for opening a file
+showToast("Open file clicked");
+return true;
+case R.id.item2:
+// Implement logic for saving a file
+showToast("Save file clicked");
+return true;
+default:
+return super.onOptionsItemSelected(item);
+}
+}
+private void showToast(String message) {
+Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+}
+}
