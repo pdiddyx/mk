@@ -1,8 +1,0 @@
-echo “Enter a number”
-read a
-If (( a % 2 = = 0 ))
-then
-echo “Even number”
-else
-echo “odd number”
-fi
